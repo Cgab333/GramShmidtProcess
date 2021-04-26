@@ -6,7 +6,7 @@ import java.lang.Math;
 /*
  * Programmer:Shay Gabison	
  * 
- * An Gram–Schmidt process program.
+ * An Gramâ€“Schmidt process program.
  * The user enter the size of the matrix, and choose by menu to:
  * Orthonormalizing or do orthogonalization only.
  * 
@@ -23,10 +23,9 @@ public class GramShmidtProcess {
 			return matrix;
 		} else if (indexCounter == 0) {
 			if (choose == 1) {
-				vectorNormlaizing(matrix[0]);
-				return (gramSchmidt(matrix, indexCounter + 1, choose));
-			} else
-				return (gramSchmidt(matrix, indexCounter + 1, choose));
+				vectorNormlaizing(matrix[0])}
+			return (gramSchmidt(matrix, indexCounter + 1, choose));
+			
 		}
 
 		else {
@@ -73,10 +72,8 @@ public class GramShmidtProcess {
 	public static double[] vectorProjactionVector2(double[] vector, double[] vector2) {
 		double norma = 0;
 		double machpela = 0;
-		double[] vector3 = new double[vector2.length];
-		for (int i = 0; i < vector3.length; i++) {
-			vector3[i] = vector2[i];
-		}
+		double[] vector3 = Arrays.copyOf(vector2, vector2.length);
+		
 		for (int j = 0; j < vector2.length; j++) {
 			machpela += vector[j] * vector2[j];
 			norma += vector2[j] * vector2[j];
@@ -98,7 +95,7 @@ public class GramShmidtProcess {
 		// 4, 1, 0, 0, 4 }, { 4, 1, 0, 0, 4 } };
 		int sizeOfTheMatrix = 0;
 		Scanner s = new Scanner(System.in);
-		System.out.println("Gram–Schmidt process");
+		System.out.println("Gramâ€“Schmidt process");
 		System.out.println("enter size of matrix: ");
 		if (s.hasNextInt())// Integrity check
 			sizeOfTheMatrix = s.nextInt();
